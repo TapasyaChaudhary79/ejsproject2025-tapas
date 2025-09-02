@@ -1,0 +1,77 @@
+<%- include('./base/header.ejs') %>
+    <%- include('./base/nav.ejs') %>
+        <div class="container">
+            <div class="alert text-center bg-primary my-3" style="color:white">
+                <h5>Edit Student</h5>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                    <form action="/edit/student/<%= student._id %>" method="post">
+                        <div>
+                            <label class="form-label">Roll No</label>
+                            
+                            <input type="text" class="form-control" name="rollNo" value="<%= student.rollNo %>"></input>
+                        </div>
+                        <div>
+                            <label class="form-label">Student Name</label>
+                            <input type="text" class="form-control" name="studentName" value="<%= student.studentName %>"></input>
+                        </div>
+                        <div>
+                            <label class="form-label">Father Name</label>
+                            <input type="text" class="form-control" name="fatherName" value="<%= student.fatherName %>"></input>
+                        </div>
+                        <div>
+                           <div>
+                             <label class="form-label">Course</label>
+                            <select class="form-control" name="course">
+                                <option value="">-- Select Course --</option>
+                                <option value="B.Tech" <%= student.course === "B.Tech" ? "selected" : "" %>>B.Tech</option>
+                                <option value="MBA" <%= student.course === "MBA" ? "selected" : "" %>>MBA</option>
+                                <option value="MCA" <%= student.course === "MCA" ? "selected" : "" %>>MCA</option>
+                                <option value="BCA" <%= student.course === "BCA" ? "selected" : "" %>>BCA</option>
+                                <option value="BBA" <%= student.course === "BBA" ? "selected" : "" %>>BBA</option>
+                            </select>
+
+</div>
+                        </div>
+                        <div>
+                            <label class="form-label">Branch</label>
+                             <select class="form-control" name="branch">
+                                <option value="">-- Select Branch --</option>
+                                <option value="CSE" <%= student.branch === "CSE" ? "selected" : "" %>>CSE</option>
+                                <option value="IT" <%= student.branch === "IT" ? "selected" : "" %>>IT</option>
+                                <option value="IOT" <%= student.branch === "IOT" ? "selected" : "" %>>IOT</option>
+                                <option value="DS" <%= student.branch === "DS" ? "selected" : "" %>>DS</option>
+                                <option value="AI/ML" <%= student.branch === "AI/ML" ? "selected" : "" %>>AI/ML</option>
+                                <option value="EC" <%= student.branch === "EC" ? "selected" : "" %>>EC</option>
+                                <option value="ME" <%= student.branch === "ME" ? "selected" : "" %>>ME</option>
+                            </select>
+
+                        </div>
+                        <div>
+                            <label class="form-label">Admission Year</label>
+                            <select class="form-control" name="yearOfAdmission">
+                                <option value="">-- Select Admission Year --</option>
+                                <option value="2020" <%= student.yearOfAdmission === "2020" ? "selected" : "" %>>2020</option>
+                                <option value="2021" <%= student.yearOfAdmission === "2021" ? "selected" : "" %>>2021</option>
+                                <option value="2022" <%= student.yearOfAdmission === "2022" ? "selected" : "" %>>2022</option>
+                                <option value="2023" <%= student.yearOfAdmission === "2023" ? "selected" : "" %>>2023</option>
+                                <option value="2024" <%= student.yearOfAdmission === "2024" ? "selected" : "" %>>2024</option>
+                                <option value="2025" <%= student.yearOfAdmission === "2025" ? "selected" : "" %>>2025</option>
+                            </select>
+             
+                             </div>
+                        <input type="submit" value="Edit Student" class="btn btn-warning w-100 my-3"></input>
+
+                    </form>
+                </div>
+                <div class=" col">
+                </div>
+            </div>
+
+        </div>
+
+        <%- include('./base/footer.ejs') %>
