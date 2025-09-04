@@ -5,8 +5,10 @@ const Schema = mongoose.Schema;
 const studentSchema = new Schema({
   rollNo: { type: String, required: true },
   studentName: { type: String },
+  motherName: { type: String, required: true },
   fatherName: { type: String, required: true }, 
   course: { type: String, required: true },
+  //email:{type: String, required: true},
   branch: { type: String },
   yearOfAdmission: { type: String },
   studentImage:{type: String},
@@ -15,3 +17,6 @@ const studentSchema = new Schema({
 });
 studentSchema.plugin(timestamps, { index: true });
 module.exports = mongoose.model("Student", studentSchema);
+// git status
+//git add -A
+// Git commit -m "Added motherName field to student model"
